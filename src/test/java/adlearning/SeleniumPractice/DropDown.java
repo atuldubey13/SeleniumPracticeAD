@@ -51,7 +51,7 @@ public class DropDown {
 		File src1=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(src1,new File("screenshot.png"));
 		driver.close();
-		
+		//Test comment
 
 	}
 
