@@ -25,10 +25,6 @@ public class DropDown {
 		driver.findElement(By.linkText("Forgot your password?")).click();
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 		Thread.sleep(1000);
-		//driver.findElement(By.cssSelector("input[placeholder='Name']")).sendKeys("Atul");
-		//driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("atul@gmail.com");
-		//driver.findElement(By.xpath("//input[@type ='text' and @placeholder='Phone Number']")).sendKeys("12345");
-		
 		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
 		
 		String passwordText = driver.findElement(By.xpath("//p[@class='infoMsg']")).getText();
