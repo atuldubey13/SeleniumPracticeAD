@@ -21,35 +21,9 @@ public class DropDown {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://rahulshettyacademy.com/locatorspractice/");
-		driver.findElement(By.linkText("Forgot your password?")).click();
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
-		Thread.sleep(1000);
-		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
-		
-		String passwordText = driver.findElement(By.xpath("//p[@class='infoMsg']")).getText();
-		String[] passwordArray = passwordText.split("'");
-		String password = passwordArray[1].trim();
-		System.out.println(password);
+		driver.get("http://qaclickacademy.com/practice.php");
 		
 		
-		driver.findElement(By.cssSelector(".go-to-login-btn")).click();
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("inputUsername")));
-		WebElement userName = driver.findElement(By.id("inputUsername"));
-		
-		userName.sendKeys("Atul");
-		driver.findElement(By.name("inputPassword")).sendKeys(password);
-		driver.findElement(By.className("signInBtn")).click();
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("login-container")));
-		WebElement loginInfo = driver.findElement(By.className("login-container"));
-		
-		File src = loginInfo.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("logo.png"));
-		File src1=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src1,new File("screenshot.png"));
 		driver.close();
 		
 
